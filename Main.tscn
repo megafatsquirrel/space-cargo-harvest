@@ -1,0 +1,302 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Main.gd" type="Script" id=2]
+[ext_resource path="res://art/space-background.png" type="Texture" id=3]
+[ext_resource path="res://Enemy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://SpaceDust.tscn" type="PackedScene" id=5]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Asteroid.tscn" type="PackedScene" id=7]
+[ext_resource path="res://sound/SDHarvestSound.wav" type="AudioStream" id=8]
+[ext_resource path="res://art/exit-zone.png" type="Texture" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 7437.38, 362.5 )
+
+[node name="Main" type="Node"]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_vertical_guides_": [  ]
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -7182.0
+margin_top = -4684.0
+margin_right = 7714.0
+margin_bottom = 2703.0
+texture = ExtResource( 3 )
+stretch_mode = 2
+
+[node name="HUD" parent="." instance=ExtResource( 6 )]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( -467, 1571 )
+
+[node name="ExitArea" type="Area2D" parent="."]
+position = Vector2( -16192, 1225 )
+
+[node name="TextureRect" type="TextureRect" parent="ExitArea"]
+modulate = Color( 1, 1, 1, 0.513726 )
+margin_left = 9064.0
+margin_top = 779.0
+margin_right = 23903.0
+margin_bottom = 1185.0
+rect_pivot_offset = Vector2( -4, -11 )
+texture = ExtResource( 9 )
+expand = true
+stretch_mode = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitArea"]
+position = Vector2( 16456, 1120 )
+shape = SubResource( 1 )
+
+[node name="SpaceDust2" parent="." instance=ExtResource( 5 )]
+position = Vector2( -590, 1490 )
+scale = Vector2( 0.547, 0.496 )
+dust_value = 2
+
+[node name="SpaceDust22" parent="." instance=ExtResource( 5 )]
+position = Vector2( -477, 1464 )
+scale = Vector2( 0.547, 0.496 )
+dust_value = 4
+
+[node name="SpaceDust23" parent="." instance=ExtResource( 5 )]
+position = Vector2( -452, 1424 )
+scale = Vector2( 0.547, 0.496 )
+dust_value = 4
+
+[node name="SpaceDust24" parent="." instance=ExtResource( 5 )]
+position = Vector2( -445, 1451 )
+scale = Vector2( 0.547, 0.496 )
+dust_value = 5
+
+[node name="SpaceDust3" parent="." instance=ExtResource( 5 )]
+position = Vector2( -545, 1448 )
+scale = Vector2( 0.547, 0.496 )
+dust_value = 4
+
+[node name="SpaceDust4" parent="." instance=ExtResource( 5 )]
+position = Vector2( -391, 1496 )
+scale = Vector2( 0.547, 0.496 )
+dust_value = 6
+
+[node name="SpaceDust25" parent="." instance=ExtResource( 5 )]
+position = Vector2( -482, 1344 )
+scale = Vector2( 0.547, 0.496 )
+dust_value = 2
+
+[node name="SpaceDust26" parent="." instance=ExtResource( 5 )]
+position = Vector2( -606, 1298 )
+scale = Vector2( 0.547, 0.496 )
+dust_value = 2
+
+[node name="SpaceDust27" parent="." instance=ExtResource( 5 )]
+position = Vector2( -693, 1349 )
+scale = Vector2( 0.547, 0.496 )
+dust_value = 2
+
+[node name="SpaceDust6" parent="." instance=ExtResource( 5 )]
+position = Vector2( -597, 1440 )
+scale = Vector2( 0.68, 0.72 )
+dust_value = 10
+
+[node name="SpaceDust7" parent="." instance=ExtResource( 5 )]
+position = Vector2( -544, 1398 )
+scale = Vector2( 0.800001, 0.76 )
+dust_value = 15
+
+[node name="SpaceDust8" parent="." instance=ExtResource( 5 )]
+position = Vector2( -404, 1324 )
+scale = Vector2( 0.919995, 0.88 )
+dust_value = 2
+
+[node name="SpaceDust28" parent="." instance=ExtResource( 5 )]
+position = Vector2( -396, 1373 )
+scale = Vector2( 0.919995, 0.88 )
+dust_value = 2
+
+[node name="SpaceDust9" parent="." instance=ExtResource( 5 )]
+position = Vector2( -508, 1254 )
+dust_value = 2
+
+[node name="SpaceDust5" parent="." instance=ExtResource( 5 )]
+position = Vector2( -210, 40 )
+scale = Vector2( 0.547, 0.496 )
+dust_value = 2
+
+[node name="SpaceDust10" parent="." instance=ExtResource( 5 )]
+position = Vector2( -156, 158 )
+scale = Vector2( 0.547, 0.496 )
+dust_value = 2
+
+[node name="SpaceDust11" parent="." instance=ExtResource( 5 )]
+position = Vector2( -102, -80.0005 )
+scale = Vector2( 0.547, 0.496 )
+dust_value = 2
+
+[node name="SpaceDust12" parent="." instance=ExtResource( 5 )]
+position = Vector2( -89, 73 )
+scale = Vector2( 0.68, 0.72 )
+dust_value = 3
+
+[node name="SpaceDust13" parent="." instance=ExtResource( 5 )]
+position = Vector2( -319, -30.9989 )
+scale = Vector2( 0.800001, 0.76 )
+dust_value = 5
+
+[node name="SpaceDust14" parent="." instance=ExtResource( 5 )]
+position = Vector2( -257, -119.999 )
+scale = Vector2( 0.919995, 0.88 )
+dust_value = 2
+
+[node name="SpaceDust16" parent="." instance=ExtResource( 5 )]
+position = Vector2( 719, -865 )
+scale = Vector2( 0.547, 0.496 )
+dust_value = 2
+
+[node name="SpaceDust17" parent="." instance=ExtResource( 5 )]
+position = Vector2( 780, -751 )
+scale = Vector2( 0.547, 0.496 )
+dust_value = 2
+
+[node name="SpaceDust18" parent="." instance=ExtResource( 5 )]
+position = Vector2( 834, -845 )
+scale = Vector2( 0.547, 0.496 )
+dust_value = 2
+
+[node name="SpaceDust19" parent="." instance=ExtResource( 5 )]
+position = Vector2( 730, -964 )
+scale = Vector2( 0.68, 0.72 )
+dust_value = 3
+
+[node name="SpaceDust20" parent="." instance=ExtResource( 5 )]
+position = Vector2( 836, -966 )
+scale = Vector2( 0.800001, 0.76 )
+dust_value = 5
+
+[node name="SpaceDust21" parent="." instance=ExtResource( 5 )]
+position = Vector2( 777, -1101 )
+scale = Vector2( 0.919995, 0.88 )
+dust_value = 2
+
+[node name="SpaceDust15" parent="." instance=ExtResource( 5 )]
+position = Vector2( -204, -235 )
+dust_value = 2
+
+[node name="Enemy" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1459, 483 )
+speed = 50
+
+[node name="Enemy2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1779, 187 )
+speed = 50
+
+[node name="Enemy3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2008, 419 )
+speed = 50
+
+[node name="Enemy7" parent="." instance=ExtResource( 4 )]
+position = Vector2( -603, -1285 )
+speed = 50
+
+[node name="Enemy8" parent="." instance=ExtResource( 4 )]
+position = Vector2( -283, -1581 )
+speed = 50
+
+[node name="Enemy9" parent="." instance=ExtResource( 4 )]
+position = Vector2( -54, -1349 )
+speed = 50
+
+[node name="Enemy4" parent="." instance=ExtResource( 4 )]
+position = Vector2( -1642, -2 )
+speed = 50
+
+[node name="Enemy5" parent="." instance=ExtResource( 4 )]
+position = Vector2( -1703, 344 )
+speed = 50
+
+[node name="Enemy6" parent="." instance=ExtResource( 4 )]
+position = Vector2( -1407, -266 )
+speed = 50
+
+[node name="Asteroid" parent="." instance=ExtResource( 7 )]
+position = Vector2( -1239, 256 )
+scale = Vector2( 0.919995, 0.88 )
+
+[node name="Asteroid8" parent="." instance=ExtResource( 7 )]
+position = Vector2( -850, -124 )
+scale = Vector2( 0.919995, 0.88 )
+
+[node name="Asteroid9" parent="." instance=ExtResource( 7 )]
+position = Vector2( -847, 241 )
+scale = Vector2( 0.919995, 0.88 )
+
+[node name="Asteroid10" parent="." instance=ExtResource( 7 )]
+position = Vector2( -530, -423 )
+scale = Vector2( 0.919995, 0.88 )
+
+[node name="Asteroid11" parent="." instance=ExtResource( 7 )]
+position = Vector2( -197, -636 )
+scale = Vector2( 0.919995, 0.88 )
+
+[node name="Asteroid12" parent="." instance=ExtResource( 7 )]
+position = Vector2( 135, -907 )
+scale = Vector2( 0.919995, 0.88 )
+
+[node name="Asteroid13" parent="." instance=ExtResource( 7 )]
+position = Vector2( 476, -690 )
+scale = Vector2( 0.919995, 0.88 )
+
+[node name="Asteroid2" parent="." instance=ExtResource( 7 )]
+position = Vector2( -7326, -160 )
+rotation = -3.38594
+scale = Vector2( 10, 10 )
+
+[node name="Asteroid3" parent="." instance=ExtResource( 7 )]
+position = Vector2( -7255, -4104 )
+rotation = -5.82242
+scale = Vector2( 5, 10 )
+
+[node name="Asteroid5" parent="." instance=ExtResource( 7 )]
+position = Vector2( 6639, -4467 )
+rotation = -6.60084
+scale = Vector2( 5.831, 5.466 )
+
+[node name="Asteroid6" parent="." instance=ExtResource( 7 )]
+position = Vector2( 7681, -1673 )
+rotation = -6.28319
+scale = Vector2( 2, 10 )
+
+[node name="Asteroid7" parent="." instance=ExtResource( 7 )]
+position = Vector2( 7401, 1131 )
+rotation = 2.00713
+scale = Vector2( 4, 2 )
+
+[node name="Asteroid4" parent="." instance=ExtResource( 7 )]
+position = Vector2( -294, -4723 )
+scale = Vector2( 25, 2 )
+
+[node name="SDHarvestSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -2.0
+
+[connection signal="game_start_click" from="HUD" to="." method="_on_HUD_game_start_click"]
+[connection signal="sum_confirm_click" from="HUD" to="." method="_on_HUD_sum_confirm_click"]
+[connection signal="thrust_purchased" from="HUD" to="." method="_on_HUD_thrust_purchased"]
+[connection signal="upgrade_confirm_click" from="HUD" to="." method="_on_HUD_upgrade_confirm_click"]
+[connection signal="player_SDC_full" from="Player" to="." method="_on_Player_player_SDC_full"]
+[connection signal="player_fuel_empty" from="Player" to="." method="_on_Player_player_fuel_empty"]
+[connection signal="player_hit_exit_area" from="Player" to="." method="_on_Player_player_hit_exit_area"]
+[connection signal="player_hit_spaceDust" from="Player" to="." method="_on_Player_player_hit_spaceDust"]
+[connection signal="player_update_fuel" from="Player" to="." method="_on_Player_player_update_fuel"]
+[connection signal="player_update_vel" from="Player" to="." method="_on_Player_player_update_vel"]
+[connection signal="body_entered" from="ExitArea" to="Player" method="_on_ExitArea_body_entered"]
+[connection signal="enemy_hit_player" from="Enemy" to="." method="_on_Enemy_enemy_hit_player"]
+[connection signal="enemy_hit_player" from="Enemy2" to="." method="_on_Enemy_enemy_hit_player"]
+[connection signal="enemy_hit_player" from="Enemy3" to="." method="_on_Enemy_enemy_hit_player"]
+[connection signal="enemy_hit_player" from="Enemy7" to="." method="_on_Enemy_enemy_hit_player"]
+[connection signal="enemy_hit_player" from="Enemy8" to="." method="_on_Enemy_enemy_hit_player"]
+[connection signal="enemy_hit_player" from="Enemy9" to="." method="_on_Enemy_enemy_hit_player"]
+[connection signal="enemy_hit_player" from="Enemy4" to="." method="_on_Enemy_enemy_hit_player"]
+[connection signal="enemy_hit_player" from="Enemy5" to="." method="_on_Enemy_enemy_hit_player"]
+[connection signal="enemy_hit_player" from="Enemy6" to="." method="_on_Enemy_enemy_hit_player"]

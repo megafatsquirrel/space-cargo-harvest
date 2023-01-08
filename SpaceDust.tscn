@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://art/space-dust.png" type="Texture" id=1]
+[ext_resource path="res://SpaceDust.gd" type="Script" id=2]
+[ext_resource path="res://art/space-dust-sparkle-0001.png" type="Texture" id=3]
+[ext_resource path="res://art/space-dust-sparkle-0002.png" type="Texture" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 75, 75 )
+
+[node name="SpaceDust" type="Area2D" groups=["Enemies", "SDClouds"]]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." groups=["Enemies", "SDClouds"]]
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Enemies", "SDClouds"]]
+scale = Vector2( 0.5, 0.5 )
+shape = SubResource( 2 )
+
+[connection signal="area_entered" from="." to="." method="_on_SpaceDust_area_entered"]
