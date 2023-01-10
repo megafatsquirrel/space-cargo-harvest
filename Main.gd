@@ -101,6 +101,7 @@ func game_reset():
 	$Player.rotation_degrees = 0
 	$Player.pause_player = false;
 	$Player.SDC = 0
+	$Player.is_SDC_full = false
 	$Player.fuel = $Player.fuel_max
 	get_tree().call_group("SDClouds", "level_reset")
 	update_HUD_player_stats()
